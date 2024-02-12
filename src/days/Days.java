@@ -27,9 +27,13 @@ public class Days {
     Scanner in =new Scanner(System.in);
     System.out.println("Enter the day number (one,two,three,four,five) in string");
     String code = in.next();
-    Weekdays t= new Weekdays();
-    t.nameOfDay(code); 
-    }// TODO code application logic here
+    try {
+            Day day = Day.valueOf(code.toUpperCase());
+            System.out.println(day.getName());
+            } catch (IllegalArgumentException e) {
+            System.out.println("Invalid input. Please enter a valid day.");
+        }
+    }
     
     
 }
